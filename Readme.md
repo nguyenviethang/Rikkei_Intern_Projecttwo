@@ -9,7 +9,7 @@ Kiểm tra xem web chạy chưa, mở trình duyệt gõ:
 http://127.0.0.1/ or http://localhost/
 => Hiển thị thông tin PHP Version =>  Chạy ok
 
-Kiểm tra database, anh dùng hệ thống adminer(không dùng workbench nhé)
+Kiểm tra database, bạn dùng hệ thống adminer(không dùng workbench nhé)
 Mở trình duyệt gõ:
 http://127.0.0.1:8081/ or http://localhost:8081/
 Sẽ xuất hiện 1 trang login của Adminer, điền thông tin như bên dưới(các thông tin db mọi người kiểm tra trong file docker-compose ở service mysql nhé):
