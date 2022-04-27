@@ -1,0 +1,30 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - 82:80
+    depends_on:
+      - php-fpm
+    volumes:
+        - ./app:/var/www/html/app/
+        - ./default.conf:/etc/nginx/conf.d/default.conf
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'rikkeisoft'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'root'
+  adminer:
+    container_name: adminer
+    image: adminer
+    ports:
+      - 8081:8080
+  php-fpm:
+    container_name: php
+    build: .
+    volumes:
+        - ./app:/var/www/html/app/
